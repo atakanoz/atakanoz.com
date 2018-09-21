@@ -1,0 +1,367 @@
+.ao__wrapper{
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	text-align: center;
+	background-position: center;
+	.container{
+		height: 100%;
+	}
+	.ao__content {
+		position: absolute;
+		top: 50%;
+		transform: translate(0,-50%);
+		left: 0;
+		right: 0;
+		.ao__brand{
+			margin-bottom: 25px;
+			-webkit-animation-duration: 0.8s;
+		  animation-duration: 0.8s;
+		  -webkit-animation-fill-mode: both;
+		  animation-fill-mode: both;
+		  -webkit-animation-name: logoLoad;
+  		animation-name: logoLoad;
+  		animation-delay: 2.5s;
+			img{
+				width: 94px;
+				 -webkit-animation: pulse 1.2s;
+				 animation-iteration-count: 2;
+			}
+		}
+		.ao__about{
+			-webkit-animation-duration: 0.8s;
+		  animation-duration: 0.8s;
+		  -webkit-animation-fill-mode: both;
+		  animation-fill-mode: both;
+		  -webkit-animation-name: fadeInUp;
+  		animation-name: fadeInUp;
+  		animation-delay: 3.1s;
+			h1,
+			h2 {
+				font-size: 32px;
+		    margin: 0;
+		    color: #FFF;
+		    letter-spacing: -.5px;
+		    font-weight: 300;
+		    margin: 11px 0px;
+				a {
+				 	border-bottom: 2px solid rgba(255,255,255,0.3);
+				}
+			}
+			h1:hover ~ .ao__skills {
+				opacity: 1;
+				visibility: visible;
+			}
+			h2:hover ~ .ao__experiences {
+				opacity: 1;
+				visibility: visible;
+				.experience {
+					-webkit-animation-duration: 0.4s;
+				  animation-duration: 0.4s;
+				  -webkit-animation-fill-mode: both;
+				  animation-fill-mode: both;
+				  -webkit-animation-name: fadeIn;
+		  		animation-name: fadeInUp;
+				}
+			}
+			.ao__skills {
+				position: absolute;
+		    background-color: #FFF;
+		    width: 250px;
+		    left: 100px;
+		    border-radius: 4px;
+		    text-align: left;
+		    padding: 12px 15px;
+		    top: -10px;
+		    opacity: 0;
+		    visibility: hidden;
+		    transition:All 0.5s ease;
+		    transition-delay: 0.3s;
+		    &:hover {
+		    	opacity: 1;
+					visibility: visible;
+		    }
+		    &:before {
+		    	content: "";
+			    position: absolute;
+			    background-image: url(../img/border-right.svg);
+			    width: 13px;
+			    height: 27px;
+			    background-size: 13px 27px;
+			    background-repeat: no-repeat;
+			    top: 15px;
+			    right: -11px;
+			    z-index: 9999999;
+		    }
+		    p {
+		    	font-size: 16px;
+    			line-height: 23px;
+    			margin-bottom: 8px;
+		    	i {
+		    		font-style: normal;
+		    		text-decoration: underline;
+		    	}
+		    }
+		    .skill__holder {
+		    	.skill {
+		    		padding: 5px 10px;
+		    		border-radius: 3px;
+		    		background-color: #000;
+		    		color: #FFF;
+		    		font-size: 14px;
+		    		font-weight: 500;
+		    		display: inline-block;
+		    		margin: 3px 0;
+		    		cursor: pointer;
+		    	}
+		    }
+		    .skill__design {
+	    		font-size: 12px;
+			    padding-top: 8px;
+			    margin-top: 15px;
+			    border-top: 1px solid rgba(0,0,0,0.08);
+			    p {
+			    	font-size: 13px;
+			    	margin-bottom: 0;
+			    	a {
+			    		color: #ea4c89;
+			    	}
+			    }
+	    	}
+			}
+			.ao__experiences {
+				position: absolute;
+		    background-color: #FFF;
+		    width: 250px;
+		    right: 90px;
+		    border-radius: 4px;
+		    text-align: left;
+		    padding: 6px 20px 6px 20px;
+		    top: -150px;
+		    opacity: 0;
+		    visibility: hidden;
+		    transition:All 0.5s ease;
+		    transition-delay: 0.3s;
+		    &:hover {
+		    	opacity: 1;
+					visibility: visible;
+		    }
+		    &:before {
+		    	content: "";
+			    position: absolute;
+			    background-image: url(../img/border-left.svg);
+			    width: 13px;
+			    height: 27px;
+			    background-size: 13px 27px;
+			    background-repeat: no-repeat;
+			    top: 45%;
+			    left: -11px;
+			    z-index: 9999999;
+		    }
+		    .experience {
+		    	padding: 13px 0;
+		    	border-bottom: 1px solid rgba(0,0,0,0.08);
+		  		animation-delay: 0.3s;
+		    	h4 {
+		    		margin: 0;
+		    		font-size: 20px;
+		    		margin-bottom: 3px;
+		    		letter-spacing: -0.2px;
+		    		span {
+		    			display: inline-block;
+					    width: 9px;
+					    height: 14px;
+					    border-radius: 2px;
+					    background-color: #000;
+					    margin-right: 8px;
+					    float: left;
+					    margin-top: 4px;
+		    		}
+		    	}
+		    	p {
+		    		margin-bottom: -1px;
+		    		font-weight: 500;
+		    	}
+		    	span {
+		    		color: rgba(0,0,0,0.4);
+		    		font-size: 12px;
+		    	}
+		    	&:last-child {
+		    		border-bottom: none
+		    	}
+		    	&.experience--artbees {
+		    		animation-delay: 0.5s;
+		    		h4 {
+		    			span {
+		    				background-color: #FDDA00
+		    			}
+		    		}
+		    	}
+		    	&.experience--seozeo {
+		    		animation-delay: 0.7s;
+		    		h4 {
+		    			span {
+		    				background-color: #C5012F
+		    			}
+		    		}
+		    	}
+		    	&.experience--nesine {
+		    		animation-delay: 0.9s;
+		    		h4 {
+		    			span {
+		    				background-color: #FFCC00
+		    			}
+		    		}
+		    	}
+		    	&.experience--freelancer {
+		    		animation-delay: 1.1s;
+		    		h4 {
+		    			span {
+		    				background-color: #DDD
+		    			}
+		    		}
+		    	}
+		    }
+		  }
+		}
+		.ao__social {
+			margin-top: 25px;
+			-webkit-animation-duration: 0.8s;
+		  animation-duration: 0.8s;
+		  -webkit-animation-fill-mode: both;
+		  animation-fill-mode: both;
+		  -webkit-animation-name: fadeInUp;
+  		animation-name: fadeInUp;
+  		animation-delay: 3.7s;
+			a {
+				display: inline-block;
+				color: rgba(255,255,255,0.42);
+				font-size: 15px;
+				letter-spacing: 1.8px;
+				text-transform: uppercase;
+				font-weight: 500;
+				padding: 0 10px;
+				position: relative;
+				transition:All 0.3s ease;
+				&:before {
+					content: "/";
+					position: absolute;
+					right: -6px;
+					color: rgba(255,255,255,0.42);
+				}
+				&:last-child {
+					&:before {
+						content: none
+					}
+				}
+				&.ao__linkedin {
+					&:hover {
+						color: #0077b5;
+					}
+				}
+				&.ao__codeable {
+					&:hover {
+						color: #18a1e4;
+					}
+				}
+				&.ao__contact {
+					&:hover {
+						color: #FFF;
+					}
+				}
+			}
+		}
+	}
+}
+
+// -------- Animations --------//
+// ---------------------------//
+
+@-webkit-keyframes pulse {
+  0% {
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  50% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+  }
+  100% {
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+  }
+}
+
+
+@-webkit-keyframes logoLoad {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+

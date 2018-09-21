@@ -1,0 +1,16 @@
+/* TEAM */                    
+Your title: Atakan Oz
+Site: http://www.atakanoz.com 
+Contact: atakanozofficial@gmail.com
+Linkedin: https://www.linkedin.com/in/atakanoz/
+Codeable: https://codeable.io/developers/atakan-oz/
+Dribbble: https://dribbble.com/atakanoz
+Instagram: https://www.instagram.com/atakan_oz/       
+       
+/* SITE */                       
+Last update: 2018/09/22                        
+Standards: HTML5, CSS3                       
+Components: No external components or frameworks used                   
+Software: Software used for the development
+
+                        
