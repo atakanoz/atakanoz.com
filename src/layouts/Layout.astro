@@ -1,0 +1,60 @@
+---
+// Import Stylesheets.
+// import "modern-normalize/modern-normalize.css";
+
+// Import Components.
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+// Properties.
+export interface Props {
+	title: string;
+	template: string;
+}
+
+const { title } = Astro.props;
+const { template } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | Atakan Oz</title>
+	</head>
+
+	<body id={"page-template-" + template}>
+		<main>
+			<Nav />
+			<div class={template + " " + "content"}>
+				<slot />
+			</div>
+			<Footer />
+		</main>
+		<style is:global>
+			html {
+				@apply h-full;
+			}
+
+			body {
+				@apply bg-[#131313] antialiased flex items-center justify-center min-h-full;
+				font-family: "Euclid Circular A";
+			}
+
+			main {
+				@apply max-w-[930px] w-full mx-auto px-6 flex flex-col h-full py-10;
+			}
+
+			.page-title {
+				@apply text-[54px] text-slate-300 font-semibold mt-5 mb-10 tracking-[-0.02em] leading-[1.1];
+			}
+
+			.content {
+				@apply pt-14 pb-20;
+			}
+		</style>
+	</body>
+</html>

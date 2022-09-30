@@ -1,0 +1,24 @@
+---
+import * as CONFIG from "../config";
+const nav = CONFIG.LINKS;
+---
+
+<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+	{
+		Object.values(nav.navigation).map((items) => (
+			<a href={items.link} aria-label={items.name} itemprop="url">
+				<span itemprop="name">{items.name}</span>
+			</a>
+		))
+	}
+</nav>
+
+<style lang="scss" is:global>
+	nav {
+		@apply flex space-x-5;
+
+		a {
+			@apply text-slate-300 text-opacity-80 border-b border-slate-500 border-opacity-20 hover:text-slate-100 transition-all;
+		}
+	}
+</style>

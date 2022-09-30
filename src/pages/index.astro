@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Decors from "../components/Decors.astro";
+import Wave from "../img/wave.png";
+import { Image, Picture } from "@astrojs/image/components";
+---
+
+<Layout title="Full-Stack Developer" template="home">
+	<div class="py-12">
+		<h1>
+			<span>Hello there!</span>
+			<br />
+			This is <i>Atakan.</i>
+		</h1>
+		<p>I am a Full-stack Web Developer currently working at Invicti Security.</p>
+		<p>I make and distrupt things based on WordPress.</p>
+	</div>
+</Layout>
+
+<style lang="scss">
+	.navigation {
+		@apply flex space-x-6;
+
+		a {
+			@apply text-slate-100 border-b border-slate-100 border-opacity-20;
+		}
+	}
+
+	h1 {
+		@apply text-slate-200 font-semibold text-[60px] md:text-[90px] lg:text-[100px] tracking-[-0.04em] leading-[1.1] mb-7 cursor-pointer;
+
+		span {
+			@apply relative;
+
+			&:before {
+				content: "";
+				background-image: url("../img/wave.png");
+
+				@apply relative block md:-right-[120px] md:top-5 bg-contain bg-no-repeat md:absolute w-[70px] h-[70px] md:w-[85px] md:h-[85px] mb-5 md:mb-0 opacity-0;
+
+				animation: bounce-in 1s ease 1s, wave 2s ease 2s;
+				animation-fill-mode: forwards;
+			}
+		}
+
+		i {
+			font-style: normal;
+			background: linear-gradient(90.69deg, #9fd8dc 23.59%, #7ea9ea 47.41%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			text-fill-color: transparent;
+		}
+	}
+
+	p {
+		@apply text-slate-300 text-lg md:text-[22px] leading-[1.5] my-3 text-opacity-80;
+	}
+
+	@keyframes bounce-in {
+		0% {
+			opacity: 0;
+			transform: scale(0.3);
+		}
+		50% {
+			opacity: 1;
+			transform: scale(1.05);
+		}
+		70% {
+			transform: scale(0.9);
+		}
+		100% {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	@keyframes wave {
+		0% {
+			transform: rotate(0deg);
+		}
+		33% {
+			opacity: 1;
+			transform: rotate(15deg);
+		}
+		66% {
+			transform: rotate(-15deg);
+		}
+		100% {
+			transform: rotate(0deg);
+		}
+	}
+</style>

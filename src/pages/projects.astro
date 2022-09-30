@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Project from "../components/Project.astro";
+import Goal from "../components/Goal.astro";
+---
+
+<Layout title="Projects" template="projects">
+	<h1 class="page-title">Projects</h1>
+	<p>I am passionately trying to either make or break things when I have free-time.</p>
+	<p>Most of my open-source projects are boiler-plate templates with modern touches, yet they will diversified soon.</p>
+
+	<div class="projects-grid">
+		<Project title="cogniwork" name="Cogniwork" link="https://cogniwork.com" type="site">Cogniwork is a remote working and productivity blog I am running in my free times. Developed from scratch on WordPress.</Project>
+		<Project title="flex" name="Flex" link="https://github.com/pressxco/flex" type="github">Boilerplate for WordPress that allows rapid theme development at high standards. A modern touch for Underscores.</Project>
+		<Project title="jekyllist" name="Jekyllist" link="https://github.com/atakanoz/jekyllist" type="github">Static website builder based on Jekyll with the power of Webpack, Tailwind and on-the-fly asset/image optimization.</Project>
+		<Project title="codekit" name="CodeKit" link="https://github.com/pressxco/flex" type="web">The only WordPress custom codes plugin that support SCSS, Less, Pug and much more. Auto-compiles and serves the codes.</Project>
+		<Project title="pluginkit" name="PluginKit" link="https://github.com/atakanoz/jekyllist" type="github">WordPress plugin starter template that comes with OOP structure and modern stack such as Webpack, Tailwind and asset optimization.</Project>
+		<Project title="performance-kit" name="Performance Kit" link="https://github.com/pressxco/performance-kit" type="github">WordPress plugin that allows you to optimize the core of the WordPress such as disabling emojis, rest-apis, and much more...</Project>
+	</div>
+
+	<section class="mt-20">
+		<h2>Current Goals</h2>
+		<div class="goals divide-y divide-slate-400 divide-opacity-20">
+			<Goal title="Observant" description="WordPress Debug Bar Plugin" goal="Develop" date="Q4 2022" />
+			<Goal title="Flex" description="Complete boilerplate template" goal="Rebrand & Maintenance" date="Q4 2022" />
+			<Goal title="Doctro" description="Complete docs theme based on Astro" goal="Develop" date="Q1 2023" />
+		</div>
+	</section>
+</Layout>
+
+<style lang="scss">
+	p {
+		@apply text-slate-300 text-opacity-80 text-lg md:text-[20px] leading-[1.6] my-3;
+	}
+
+	.projects-grid {
+		@apply grid grid-cols-1 md:grid-cols-2 gap-8 mt-16;
+	}
+
+	h2 {
+		@apply text-[36px] text-slate-200 font-semibold mt-5 mb-10 tracking-[-0.015em] leading-[1.1];
+	}
+
+	.goals {
+		@apply mt-6 border border-slate-400 border-opacity-20 rounded-lg;
+	}
+</style>

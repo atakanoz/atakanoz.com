@@ -1,0 +1,39 @@
+---
+export interface Props {
+	title: string;
+	date: string;
+	goal: string;
+	description: string;
+}
+
+const { title, date, goal, description } = Astro.props;
+---
+
+<div id={title + "-goal"} class="goal">
+	<div class="goal-title">{title}</div>
+	<div class="goal-desc">{description}</div>
+	<div class="the-goal">{goal}</div>
+	<div class="the-goal-date">by {date}</div>
+</div>
+
+<style lang="scss">
+	.goal {
+		@apply px-5 py-4 flex flex-col md:flex-row gap-5 md:gap-0 items-center text-slate-200 relative;
+
+		.goal-title {
+			@apply font-medium mr-auto md:mr-0 text-slate-300;
+		}
+
+		.goal-desc {
+			@apply mr-auto ml-0 md:ml-5 italic text-slate-300 text-opacity-40;
+		}
+
+		.the-goal {
+			@apply mr-auto md:mr-0 text-slate-300 text-opacity-50 bg-slate-400 bg-opacity-5 px-5 h-[35px] flex items-center rounded-full text-[13px] flex-wrap absolute top-4 right-5 md:top-0 md:right-0 md:relative;
+		}
+
+		.the-goal-date {
+			@apply mr-auto md:mr-0 ml-0 md:ml-5 text-slate-300 text-opacity-50;
+		}
+	}
+</style>
