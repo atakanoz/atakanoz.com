@@ -2,29 +2,25 @@
 import * as CONFIG from "../config";
 const social_links = CONFIG.LINKS;
 import { Octokit } from "@octokit/core";
-import ls from "localstorage-slim";
 
-// Import Env. Variable.
-const api = import.meta.env.PUBLIC_GITHUB_API;
+const api = import.meta.env.SECRET_GITHUB_API;
 
-// Assign new OctoKit.
 const octokit = new Octokit({
 	auth: api,
 });
 
-// Get Events.
 const event = await octokit.request("GET /users/{username}/events", {
 	username: "atakanoz",
 });
 
-// Get Repo.
 const repo = await octokit.request("GET /repos/{owner}/{repo}", {
 	owner: "atakanoz",
 	repo: event.data[0].repo.name.replace("atakanoz/", ""),
 });
 
-// Define consts for data.
-const commit_message = event.data[0].payload.commits[0].message;
+const commit = event.data.find((add) => add.type === "PushEvent");
+
+const commit_message = commit.payload.commits[0].message;
 const commit_date = event.data[0].created_at;
 const repo_url = repo.data.html_url;
 const repo_name = repo.data.name;
