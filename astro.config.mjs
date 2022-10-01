@@ -6,8 +6,6 @@ import robotsTxt from 'astro-robots-txt';
 import sitemap from "@astrojs/sitemap";
 import turbolinks from'@astrojs/turbolinks';
 
-import htmlMinifier from "astro-html-minifier";
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://atakanoz.com',
@@ -16,5 +14,5 @@ export default defineConfig({
   },
   integrations: [tailwind(), turbolinks(), image({
     serviceEntryPoint: '@astrojs/image/sharp'
-  }), compress(), sitemap(), robotsTxt(), htmlMinifier()]
+  }), compress(), sitemap(), robotsTxt()]
 });
