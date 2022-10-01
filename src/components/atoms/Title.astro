@@ -1,0 +1,22 @@
+---
+export interface Props {
+	type: string;
+}
+
+const { type } = Astro.props;
+const Tag = type;
+---
+
+<Tag>
+	<slot />
+</Tag>
+
+<style lang="scss">
+	h1 {
+		@apply text-[54px] text-slate-300 font-semibold mt-5 mb-10 tracking-[-0.02em] leading-[1.1];
+	}
+
+	h2 {
+		@apply text-[36px] text-slate-200 font-semibold mt-5 mb-10 tracking-[-0.015em] leading-[1.1];
+	}
+</style>

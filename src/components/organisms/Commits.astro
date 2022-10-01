@@ -1,6 +1,4 @@
 ---
-import * as CONFIG from "../config";
-const social_links = CONFIG.LINKS;
 import { Octokit } from "@octokit/core";
 
 const api = import.meta.env.SECRET_GITHUB_API;
@@ -19,31 +17,21 @@ const repo = await octokit.request("GET /repos/{owner}/{repo}", {
 });
 
 const commit = event.data.find((add) => add.type === "PushEvent");
-
+const commit_url = repo.data.html_url + "/commit/" + commit.payload.commits[0].sha;
 const commit_message = commit.payload.commits[0].message;
 const commit_date = event.data[0].created_at;
 const repo_url = repo.data.html_url;
 const repo_name = repo.data.name;
 ---
 
-<footer>
-	<div class="social_links">
-		{Object.values(social_links.social).map((item) => <a href={item.link}>{item.name}</a>)}
-	</div>
-	<div class="latest_commit">
-		<p>Latest commit is <a href="#">{commit_message}</a> on <a href={repo_url}>{repo_name}</a> at {commit_date}.</p>
-	</div>
-</footer>
+<div class="latest_commit">
+	<p>
+		Latest commit is <a href={commit_url} title="Latest commit" aria-label="Latest commit">{commit_message}</a>
+		on <a title="Commit repo" aria-label="Commit repo" href={repo_url}>{repo_name}</a> at {commit_date}.
+	</p>
+</div>
 
-<style lang="scss" is:global>
-	.social_links {
-		@apply flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5;
-
-		a {
-			@apply text-slate-300 text-opacity-80 border-b border-slate-500 border-opacity-20 inline-flex hover:text-slate-200 transition-all;
-		}
-	}
-
+<style lang="scss">
 	.latest_commit {
 		@apply text-slate-300 text-opacity-80 mt-5;
 

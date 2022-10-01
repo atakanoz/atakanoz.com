@@ -1,19 +1,19 @@
 ---
-import * as CONFIG from "../config";
-const nav = CONFIG.LINKS;
+import * as CONFIG from "../../config";
+const nav = CONFIG.LINKS.navigation;
 ---
 
 <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 	{
-		Object.values(nav.navigation).map((items) => (
-			<a href={items.link} aria-label={items.name} itemprop="url">
+		nav.map((items) => (
+			<a href={items.link} aria-label={items.name} title={items.name} itemprop="url">
 				<span itemprop="name">{items.name}</span>
 			</a>
 		))
 	}
 </nav>
 
-<style lang="scss" is:global>
+<style lang="scss">
 	nav {
 		@apply flex space-x-5;
 

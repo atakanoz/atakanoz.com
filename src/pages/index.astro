@@ -1,15 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Decors from "../components/Decors.astro";
 import Wave from "../img/wave.png";
 import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <Layout title="Full-Stack Developer" template="home">
-	<div class="py-12">
+	<div class="md:py-4 xl:py-8 2xl:py-20">
 		<h1>
-			<span>Hello there!</span>
-			<br />
+			<div>
+				<div class="hello">
+					<span class="wave"><Image src={Wave} width="85" height="85" format="webp" alt="wave" /></span>
+					Hello there!
+				</div>
+			</div>
 			This is <i>Atakan.</i>
 		</h1>
 		<p>I am a Full-stack Web Developer currently working at Invicti Security.</p>
@@ -29,18 +32,15 @@ import { Image, Picture } from "@astrojs/image/components";
 	h1 {
 		@apply text-slate-200 font-semibold text-[60px] md:text-[90px] lg:text-[100px] tracking-[-0.04em] leading-[1.1] mb-7 cursor-pointer;
 
-		span {
-			@apply relative;
+		div.hello {
+			@apply relative inline-flex flex-col md:flex-row flex-wrap;
+		}
 
-			&:before {
-				content: "";
-				background-image: url("../img/wave.png");
+		span.wave {
+			@apply relative block md:-right-[120px] md:top-3 bg-contain bg-no-repeat md:absolute w-[75px] h-[75px] md:w-[85px] md:h-[85px] mb-5 md:mb-0 opacity-0;
 
-				@apply relative block md:-right-[120px] md:top-5 bg-contain bg-no-repeat md:absolute w-[70px] h-[70px] md:w-[85px] md:h-[85px] mb-5 md:mb-0 opacity-0;
-
-				animation: bounce-in 1s ease 1s, wave 2s ease 2s;
-				animation-fill-mode: forwards;
-			}
+			animation: bounce-in 1s ease 1s, wave 2s ease 2s;
+			animation-fill-mode: forwards;
 		}
 
 		i {

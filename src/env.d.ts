@@ -1,1 +1,1 @@
-/// <reference types="@astrojs/image/clientt" />
+/// <reference types="@astrojs/image/client" />

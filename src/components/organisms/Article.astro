@@ -1,0 +1,17 @@
+---
+export interface Props {
+	title: string;
+	url: string;
+	date: string;
+}
+
+const { title, url, date } = Astro.props;
+---
+
+<a href={url} aria-label={title} title={title}>{title}</a>
+
+<style lang="scss">
+	a {
+		@apply text-slate-300 text-opacity-60 text-lg md:text-[20px] leading-[1.6] border-b border-slate-300 border-opacity-20 py-5 hover:text-slate-100 transition-all;
+	}
+</style>

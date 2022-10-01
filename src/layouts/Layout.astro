@@ -3,17 +3,17 @@
 // import "modern-normalize/modern-normalize.css";
 
 // Import Components.
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
+import Nav from "../components/templates/Nav.astro";
+import Footer from "../components/templates/Footer.astro";
 
 // Properties.
 export interface Props {
 	title: string;
 	template: string;
+	description: string;
 }
 
-const { title } = Astro.props;
-const { template } = Astro.props;
+const { title, description, template } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -22,8 +22,20 @@ const { template } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Atakan Oz</title>
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title + "| Atakan Oz"} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://atakanoz.com" />
+		<meta property="og:image" content="../og.jpg" />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="https://atakanoz.com" />
+		<meta name="twitter:creator" content="@atakanoz.com" />
+		<meta property="og:url" content="http://atakanoz.com" />
+		<meta property="og:title" content={title + "| Atakan Oz"} />
+		<meta property="og:image" content="../og.jpg" />
 	</head>
 
 	<body id={"page-template-" + template}>
@@ -62,6 +74,7 @@ const { template } = Astro.props;
 				src: local("Euclid Circular A Bold"), local("../fonts/EuclidCircularA-Bold"), url("../fonts/EuclidCircularA-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-Bold.woff2") format("woff2"), url("../fonts/EuclidCircularA-Bold.woff") format("woff"), url("../fonts/EuclidCircularA-Bold.ttf") format("truetype");
 				font-weight: bold;
 				font-style: normal;
+				font-display: swap;
 			}
 
 			@font-face {
@@ -70,6 +83,7 @@ const { template } = Astro.props;
 				src: local("Euclid Circular A Light"), local("../fonts/EuclidCircularA-Light"), url("../fonts/EuclidCircularA-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-Light.woff2") format("woff2"), url("../fonts/EuclidCircularA-Light.woff") format("woff"), url("../fonts/EuclidCircularA-Light.ttf") format("truetype");
 				font-weight: 300;
 				font-style: normal;
+				font-display: swap;
 			}
 
 			@font-face {
@@ -78,6 +92,7 @@ const { template } = Astro.props;
 				src: local("Euclid Circular A Bold Italic"), local("../fonts/EuclidCircularA-BoldItalic"), url("../fonts/EuclidCircularA-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-BoldItalic.woff2") format("woff2"), url("../fonts/EuclidCircularA-BoldItalic.woff") format("woff"), url("../fonts/EuclidCircularA-BoldItalic.ttf") format("truetype");
 				font-weight: bold;
 				font-style: italic;
+				font-display: swap;
 			}
 
 			@font-face {
@@ -86,6 +101,7 @@ const { template } = Astro.props;
 				src: local("Euclid Circular A Light Italic"), local("../fonts/EuclidCircularA-LightItalic"), url("../fonts/EuclidCircularA-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-LightItalic.woff2") format("woff2"), url("../fonts/EuclidCircularA-LightItalic.woff") format("woff"), url("../fonts/EuclidCircularA-LightItalic.ttf") format("truetype");
 				font-weight: 300;
 				font-style: italic;
+				font-display: swap;
 			}
 
 			@font-face {
@@ -94,6 +110,7 @@ const { template } = Astro.props;
 				src: local("Euclid Circular A Regular"), local("../fonts/EuclidCircularA-Regular"), url("../fonts/EuclidCircularA-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-Regular.woff2") format("woff2"), url("../fonts/EuclidCircularA-Regular.woff") format("woff"), url("../fonts/EuclidCircularA-Regular.ttf") format("truetype");
 				font-weight: normal;
 				font-style: normal;
+				font-display: swap;
 			}
 
 			@font-face {
@@ -102,6 +119,7 @@ const { template } = Astro.props;
 				src: local("Euclid Circular A SemiBold"), local("../fonts/EuclidCircularA-SemiBold"), url("../fonts/EuclidCircularA-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-SemiBold.woff2") format("woff2"), url("../fonts/EuclidCircularA-SemiBold.woff") format("woff"), url("../fonts/EuclidCircularA-SemiBold.ttf") format("truetype");
 				font-weight: 600;
 				font-style: normal;
+				font-display: swap;
 			}
 
 			@font-face {
@@ -110,6 +128,7 @@ const { template } = Astro.props;
 				src: local("Euclid Circular A Medium"), local("../fonts/EuclidCircularA-Medium"), url("../fonts/EuclidCircularA-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-Medium.woff2") format("woff2"), url("../fonts/EuclidCircularA-Medium.woff") format("woff"), url("../fonts/EuclidCircularA-Medium.ttf") format("truetype");
 				font-weight: 500;
 				font-style: normal;
+				font-display: swap;
 			}
 
 			@font-face {
@@ -118,6 +137,7 @@ const { template } = Astro.props;
 				src: local("Euclid Circular A Italic"), local("../fonts/EuclidCircularA-Italic"), url("../fonts/EuclidCircularA-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-Italic.woff2") format("woff2"), url("../fonts/EuclidCircularA-Italic.woff") format("woff"), url("../fonts/EuclidCircularA-Italic.ttf") format("truetype");
 				font-weight: normal;
 				font-style: italic;
+				font-display: swap;
 			}
 
 			@font-face {
@@ -126,6 +146,7 @@ const { template } = Astro.props;
 				src: local("Euclid Circular A SemiBold Italic"), local("../fonts/EuclidCircularA-SemiBoldItalic"), url("../fonts/EuclidCircularA-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-SemiBoldItalic.woff2") format("woff2"), url("../fonts/EuclidCircularA-SemiBoldItalic.woff") format("woff"), url("../fonts/EuclidCircularA-SemiBoldItalic.ttf") format("truetype");
 				font-weight: 600;
 				font-style: italic;
+				font-display: swap;
 			}
 
 			@font-face {
@@ -134,6 +155,7 @@ const { template } = Astro.props;
 				src: local("Euclid Circular A Medium Italic"), local("../fonts/EuclidCircularA-MediumItalic"), url("../fonts/EuclidCircularA-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-MediumItalic.woff2") format("woff2"), url("../fonts/EuclidCircularA-MediumItalic.woff") format("woff"), url("../fonts/EuclidCircularA-MediumItalic.ttf") format("truetype");
 				font-weight: 500;
 				font-style: italic;
+				font-display: swap;
 			}
 		</style>
 	</body>

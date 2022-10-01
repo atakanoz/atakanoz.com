@@ -1,24 +1,26 @@
 ---
+import * as CONFIG from "../config";
 import Layout from "../layouts/Layout.astro";
+import Title from "../components/atoms/Title.astro";
+import Article from "../components/organisms/Article.astro";
+
+const articles = CONFIG.LINKS.articles;
 ---
 
-<Layout title="About">
-	<h1 class="page-title">About Me</h1>
+<Layout title="About" template="about">
+	<Title type="h1">About Me</Title>
 	<p>Hello again! My name is Atakan, I am <strong>full-stack web developer</strong> who lives in Ankara, Turkey. I have this strange passion about making and breaking things on the world wide web. Even tough I have a bachelor degree on socialogy, I rather examine, research and fix the codebase issues than the society.</p>
 	<p>I have started interacting with website development <strong>as early as 2012</strong>, and I am developing websites and web apps since then.</p>
 	<p>My primary expertise is in developing <strong> WordPress-based solutions</strong> for the range of businesses from startups to enterprises. I am also quite <strong>obsessed about web performance</strong>, so you may guess how I am looking JS-based solutions nowadays.</p>
 	<p>Besides brainstorming for new projects, I am trying really hard to investing time for my open-source <a href="/projects">projects</a> in my spare time.</p>
 	<p>Currently I am stretching the limits of WordPress at <strong>Invicti Security</strong>.</p>
 
-	<div class="mt-20">
-		<h2>Published Articles</h2>
+	<section class="mt-20">
+		<Title type="h2">Published Articles</Title>
 		<div class="articles">
-			<a href="">Setting Up A WordPress Membership – Options and How It Works</a>
-			<a href="https://themes.artbees.net/blog/backup-your-wordpress-website/">How to Backup Your WordPress Database Like a Pro</a>
-			<a href="">Making The Most Of The WordPress Debugging Feature</a>
-			<a href="">How to Use Inspect Element: Get a sneak peek behind the curtain</a>
+			{articles.map((item) => <Article title={item.title} url={item.link} date={item.date} />)}
 		</div>
-	</div>
+	</section>
 </Layout>
 
 <style lang="scss">
@@ -28,10 +30,6 @@ import Layout from "../layouts/Layout.astro";
 		strong {
 			@apply text-slate-200 font-medium;
 		}
-	}
-
-	h2 {
-		@apply text-[36px] text-slate-200 font-semibold mt-5 mb-10 tracking-[-0.015em] leading-[1.1];
 	}
 
 	.articles {

@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Project from "../components/Project.astro";
-import Goal from "../components/Goal.astro";
+import Project from "../components/organisms/Project.astro";
+import Goal from "../components/organisms/Goal.astro";
+import Title from "../components/atoms/Title.astro";
 ---
 
 <Layout title="Projects" template="projects">
-	<h1 class="page-title">Projects</h1>
+	<Title type="h1">Projects</Title>
 	<p>I am passionately trying to either make or break things when I have free-time.</p>
 	<p>Most of my open-source projects are boiler-plate templates with modern touches, yet they will diversified soon.</p>
 
@@ -19,7 +20,7 @@ import Goal from "../components/Goal.astro";
 	</div>
 
 	<section class="mt-20">
-		<h2>Current Goals</h2>
+		<Title type="h2">Current Goals</Title>
 		<div class="goals divide-y divide-slate-400 divide-opacity-20">
 			<Goal title="Observant" description="WordPress Debug Bar Plugin" goal="Develop" date="Q4 2022" />
 			<Goal title="Flex" description="Complete boilerplate template" goal="Rebrand & Maintenance" date="Q4 2022" />
@@ -35,10 +36,6 @@ import Goal from "../components/Goal.astro";
 
 	.projects-grid {
 		@apply grid grid-cols-1 md:grid-cols-2 gap-8 mt-16;
-	}
-
-	h2 {
-		@apply text-[36px] text-slate-200 font-semibold mt-5 mb-10 tracking-[-0.015em] leading-[1.1];
 	}
 
 	.goals {

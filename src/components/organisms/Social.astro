@@ -1,0 +1,24 @@
+---
+import * as CONFIG from "../../config";
+const social_links = CONFIG.LINKS.social;
+---
+
+<div class="social_links">
+	{
+		social_links.map((item) => (
+			<a title={item.name + " Link"} aria-label={item.name.toLowerCase() + "-link"} href={item.link} target="_blank">
+				{item.name}
+			</a>
+		))
+	}
+</div>
+
+<style lang="scss">
+	.social_links {
+		@apply flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5;
+
+		a {
+			@apply text-slate-300 text-opacity-80 border-b border-slate-500 border-opacity-20 inline-flex hover:text-slate-200 transition-all;
+		}
+	}
+</style>
