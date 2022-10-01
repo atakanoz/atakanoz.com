@@ -4,7 +4,6 @@ import image from "@astrojs/image";
 import compress from "astro-compress";
 import robotsTxt from 'astro-robots-txt';
 import sitemap from "@astrojs/sitemap";
-import turbolinks from'@astrojs/turbolinks';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +11,7 @@ export default defineConfig({
   experimental: {
     integrations: true
   },
-  integrations: [tailwind(), turbolinks(), image({
+  integrations: [tailwind(), image({
     serviceEntryPoint: '@astrojs/image/sharp'
   }), compress(), sitemap(), robotsTxt()]
 });
