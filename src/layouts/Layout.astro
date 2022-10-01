@@ -46,7 +46,16 @@ const { title, description, template } = Astro.props;
 			</div>
 			<Footer />
 		</main>
-		<style is:global>
+		<!-- Calendly badge widget begin -->
+		<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+		<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+		<script type="text/javascript">
+			window.onload = function () {
+				Calendly.initBadgeWidget({ url: "https://calendly.com/atakanoz", text: "Schedule time with me", color: "#212121", textColor: "#ffffff", branding: true });
+			};
+		</script>
+		<!-- Calendly badge widget end -->
+		<style lang="scss" is:global>
 			html {
 				@apply h-full;
 			}
@@ -65,7 +74,7 @@ const { title, description, template } = Astro.props;
 			}
 
 			.content {
-				@apply pt-14 pb-20;
+				@apply pt-10 md:pt-14 pb-20;
 			}
 
 			@font-face {
@@ -156,6 +165,23 @@ const { title, description, template } = Astro.props;
 				font-weight: 500;
 				font-style: italic;
 				font-display: swap;
+			}
+
+			html {
+				.calendly-badge-widget {
+					@apply -bottom-0.5 right-0 w-full flex items-center md:bottom-5 md:right-5 md:w-auto;
+
+					font-family: "Euclid Circular A";
+
+					.calendly-badge-content {
+						@apply w-full flex flex-col gap-0.5 items-center rounded-none md:rounded-lg justify-center h-[55px];
+						font-family: "Euclid Circular A";
+
+						span {
+							@apply text-opacity-60 font-normal text-white;
+						}
+					}
+				}
 			}
 		</style>
 	</body>
