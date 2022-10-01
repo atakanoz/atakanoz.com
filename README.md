@@ -1,35 +1,25 @@
-# Welcome to [Astro](https://astro.build)
+![Logo](https://atakanoz.com/github.svg)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/atakanoz/atakanoz.com) ![GitHub repo size](https://img.shields.io/github/repo-size/atakanoz/atakanoz.com) ![Lines of code](https://img.shields.io/tokei/lines/github/atakanoz/atakanoz.com) ![GitHub package.json version](https://img.shields.io/github/package-json/v/atakanoz/atakanoz.com?color=%23) ![GitHub last commit](https://img.shields.io/github/last-commit/atakanoz/atakanoz.com)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+## 🔥 Personal Portfolio Website
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This is the source of of my personal website (https://atakanoz.com).
+Built on mighty [Astro](https://astro.build), deployed at [CloudFlare Pages](https://pages.cloudflare.com).
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+## ⚡ Additional Packages
+All additional packages running on live.
+
+| Name | For |
+| :--------------------- | :------------------------------------------------- |
+| @astrojs/image              | Image generation and management
+| @astrojs/sitemap             | Sitemap generation
+| @astrojs/tailwind           | Tailwind
+| astro-compress              | Compressing assets at build
+| octokit              | Github API wrapper to get latest commit.
+| sass              | CSS Preprocessor.
+| sharp              | Image transformation
 
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
@@ -37,13 +27,9 @@ All commands are run from the root of the project, from a terminal:
 
 | Command                | Action                                             |
 | :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| `yarn install`          | Installs dependencies                              |
+| `yarn run dev`          | Starts local dev server at `localhost:3000`        |
+| `yarn run build`        | Build your production site to `./dist/`            |
+| `yarn run preview`      | Preview your build locally, before deploying       |
+| `yarn run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `yarn run astro --help` | Get help using the Astro CLI                       |
